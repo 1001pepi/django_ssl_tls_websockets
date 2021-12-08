@@ -1,0 +1,33 @@
+.title{
+    background-color: rgba(152, 216, 48, 0.932);
+    height: 12vh;
+}
+
+.room-form{
+    border: solid; 
+    border-radius: 10px;
+}
+
+#chat-log{
+    min-width: 50vw;
+    height: 63vh;
+    background-color:rgba(152, 216, 48, 0.1);
+}
+
+.logo{
+    width: 150px;
+}
+
+.logo_room{
+    width: 50px;
+    border-radius: 35px;
+}
+
+.left-panel{
+    background-color: rgba(152, 216, 48, 0.5);
+}
+
+.row_title{
+    background-color: rgba(152, 216, 48, 0.5);
+
+}

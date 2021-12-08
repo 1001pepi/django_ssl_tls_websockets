@@ -1,0 +1,59 @@
+{% extends "chat/base.html" %}
+
+{% block content %}
+    <div>
+        <div class="contiainer">
+            <div class = "row d-flex justify-content-center">
+                {% load static %} <img class="logo" src="{%static "chat/img/logo_chat.jpg" %}" alt="SeChat"/>
+            </div>
+
+            <div class = "row d-flex justify-content-center">
+                <div class="col-6">
+                    <div class="container mt-3 p-3 room-form">
+                        <div class="row p-2 d-flex justify-content-center">
+                            Which chat room would you like to enter?<br>
+                        </div>
+                        
+                        <div class="row p-2 d-flex justify-content-center">
+                            <input id="room-name-input" type="text" size="20"><br>
+                        </div>
+            
+                        <div class="row p-2 d-flex justify-content-center">
+                            Join the room as: <br>
+                        </div>
+            
+                        <div class="row p-2 d-flex justify-content-center">
+                            <input id="user-name-input" type="text" size="20"><br>
+                        </div>
+            
+                        <div class="row p-2 d-flex justify-content-center">
+                            <input id="room-name-submit" type="button" value="Enter">
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+
+            var userName = document.querySelector('#user-name-input').value;
+
+            window.location.pathname = '/chat/' + roomName + '/' + userName + '/';
+        };
+    </script>
+
+{% endblock %}
